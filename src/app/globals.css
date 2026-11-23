@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+
+  --color-cream: #fbf8f1;
+  --color-cream-dark: #f2ebdd;
+
+  --color-forest-50: #eef5f0;
+  --color-forest-100: #d6e7dc;
+  --color-forest-200: #aecfba;
+  --color-forest-300: #7fb093;
+  --color-forest-400: #4f8c6c;
+  --color-forest-500: #2f6e4f;
+  --color-forest-600: #235740;
+  --color-forest-700: #1a4432;
+  --color-forest-800: #123326;
+  --color-forest-900: #0d241a;
+  --color-forest-950: #07150f;
+
+  --color-gold-100: #faf0d8;
+  --color-gold-200: #f3e0b4;
+  --color-gold-300: #e9c882;
+  --color-gold-400: #ddae55;
+  --color-gold-500: #c9922f;
+  --color-gold-600: #a8761f;
+  --color-gold-700: #835a18;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-gold-300);
+    color: var(--color-forest-950);
+  }
+}
+
+@keyframes harvest-enter {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .harvest-hero-copy {
+    animation: harvest-enter 650ms ease-out both;
+  }
+
+  .harvest-action,
+  .harvest-card,
+  .harvest-photo {
+    transition: transform 250ms ease, background-color 200ms ease, box-shadow 250ms ease;
+  }
+
+  @media (hover: hover) {
+    .harvest-action:hover,
+    .harvest-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .harvest-card:hover .harvest-photo {
+      transform: scale(1.02);
+    }
+  }
+
+  @supports (animation-timeline: view()) {
+    .harvest-reveal {
+      animation: harvest-enter linear both;
+      animation-timeline: view();
+      animation-range: entry 3% entry 58%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
