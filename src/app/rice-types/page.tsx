@@ -6,9 +6,9 @@ import { riceTypes } from "@/lib/rice-types";
 
 
 export const metadata: Metadata = {
-  title: "Rice Types",
+  title: "Rice Products",
   description:
-    "Basmati, non-Basmati and parboiled rice varieties exported by Amir Rice Export — with grain lengths and descriptions.",
+    "Basmati, non-Basmati and parboiled rice varieties exported by Prime Rice — with grain lengths and descriptions.",
 };
 
 export default function RiceTypesPage() {

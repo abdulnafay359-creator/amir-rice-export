@@ -2,7 +2,7 @@ import { getDatabase } from "@/lib/db";
 import { riceTypes } from "@/lib/rice-types";
 
 const allowedRice = new Set(["", "other", ...riceTypes.map((rice) => rice.slug)]);
-const limits = { name: 120, company: 160, email: 254, country: 100, rice: 80, quantity: 60, message: 3000 };
+const limits = { name: 120, company: 160, email: 254, country: 100, phone: 60, port: 120, packaging: 160, rice: 80, quantity: 60, message: 3000 };
 
 export async function POST(request: Request) {
   if (request.headers.get("sec-fetch-site") === "cross-site") {
@@ -28,7 +28,7 @@ export async function POST(request: Request) {
       return [key, typeof value === "string" ? value.trim() : ""];
     }),
   );
-  const { name, company, email, country, rice, quantity, message } = fields;
+  const { name, company, email, country, rice, quantity, message, phone, port, packaging } = fields;
 
   if (
     typeof id !== "string" ||
@@ -44,8 +44,8 @@ export async function POST(request: Request) {
   try {
     const sql = getDatabase();
     await sql`
-      INSERT INTO public.rice_export_inquiries (id, name, company, email, country, rice, quantity, message)
-      VALUES (${id}, ${name}, ${company}, ${email}, ${country}, ${rice}, ${quantity}, ${message})
+      INSERT INTO public.rice_export_inquiries (id, name, company, email, country, rice, quantity, message, phone, port, packaging)
+      VALUES (${id}, ${name}, ${company}, ${email}, ${country}, ${rice}, ${quantity}, ${message}, ${phone}, ${port}, ${packaging})
       ON CONFLICT (id) DO NOTHING
     `;
     return Response.json({ ok: true }, { status: 201 });

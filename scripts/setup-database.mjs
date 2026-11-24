@@ -19,6 +19,12 @@ try {
       message varchar(3000) NOT NULL
     )
   `;
+  await sql`
+    ALTER TABLE public.rice_export_inquiries
+      ADD COLUMN IF NOT EXISTS phone varchar(60) NOT NULL DEFAULT '',
+      ADD COLUMN IF NOT EXISTS port varchar(120) NOT NULL DEFAULT '',
+      ADD COLUMN IF NOT EXISTS packaging varchar(160) NOT NULL DEFAULT ''
+  `;
   console.log("Rice export inquiry table is ready.");
 } catch {
   console.error("Database setup failed. Check the Neon connection and permissions.");

@@ -1,57 +1,46 @@
 import type { Metadata } from "next";
 import InquiryForm from "@/components/inquiry-form";
+import { primeRiceContact as contact } from "@/lib/prime-rice-contact";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description:
-    "Request a rice quotation from Amir Rice Export. Share your grade, quantity and destination port.",
+  description: "Contact Prime Rice for bulk orders, private-label packaging and rice export quotations.",
 };
-
-const DETAILS = [
-  { label: "Office", href: "https://www.google.com/maps/search/?api=1&query=204+Progressive+Plaza+Beaumont+Road+Karachi", value: "204 Progressive Plaza, Beaumont Road, Civil Lines, Karachi, Pakistan" },
-  { label: "Email", value: "info@amirriceexport.com", href: "mailto:info@amirriceexport.com" },
-  { label: "Phone", value: "+92 21 3522 1185", href: "tel:+922135221185" },
-  { label: "Alternate phone", value: "+92 21 3522 1186", href: "tel:+922135221186" },
-  { label: "Alternate email", value: "artrice1@hotmail.com", href: "mailto:artrice1@hotmail.com" },
-  { label: "Hours", value: "09:00–17:00 PKT" },
-];
 
 export default function ContactPage() {
   return (
-    <section className="mx-auto grid w-full max-w-7xl gap-12 px-5 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 lg:px-10 lg:py-20">
+    <section className="mx-auto grid w-full max-w-7xl gap-12 px-5 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-10">
       <div>
-        <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-gold-600">
-          Contact us
-        </p>
-        <h1 className="mt-3 font-serif text-4xl leading-[1.08] tracking-tight text-forest-950 sm:text-5xl">
-          Let’s talk about your next shipment.
+        <h1 className="font-serif text-4xl tracking-tight text-forest-950 sm:text-5xl">
+          Your Next Rice Shipment Starts Here.
         </h1>
-        <p className="mt-5 max-w-md text-base leading-relaxed text-forest-800/80">
-          Share your rice grade, quantity and destination port.
+        <p className="mt-5 leading-relaxed text-forest-800">
+          Looking for a reliable rice supplier? Whether you are interested in bulk orders, specific rice varieties or private label packaging, our team is here to help.
+        </p>
+        <p className="mt-4 leading-relaxed text-forest-800">
+          Share your requirements with us, and we will work with you to find a suitable solution for your business.
         </p>
 
-        <dl className="mt-10 divide-y divide-forest-950/10 border-y border-forest-950/10">
-          {DETAILS.map((item) => (
-            <div key={item.label} className="flex items-start justify-between gap-6 py-4">
-              <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-forest-600">
-                {item.label}
-              </dt>
-              <dd className="text-right text-sm font-medium text-forest-900">
-                {item.href ? (
-                  <a href={item.href} className="transition-colors hover:text-forest-600">
-                    {item.value}
-                  </a>
-                ) : (
-                  item.value
-                )}
-              </dd>
-            </div>
-          ))}
-        </dl>
-
+        <div className="mt-8 rounded-2xl border border-forest-950/10 bg-cream-dark p-6">
+          <h2 className="font-serif text-2xl text-forest-950">Contact our team</h2>
+          <p className="mt-3 leading-relaxed">
+            For product information, business inquiries, packaging requirements or export quotations, feel free to contact our team directly.
+          </p>
+          <address className="mt-5 grid gap-2 not-italic">
+            <strong>{contact.name}</strong>
+            <a className="underline" href={`tel:${contact.phone}`}>{contact.phone}</a>
+            <a className="underline" href={`mailto:${contact.email}`}>{contact.email}</a>
+            <p>{contact.address}</p>
+          </address>
+          <p className="mt-4">We look forward to working with you.</p>
+        </div>
       </div>
-
-      <InquiryForm />
+      <div>
+        <p className="mb-4 leading-relaxed text-forest-800">
+          Please provide your product requirements and contact information so our team can prepare a relevant quotation.
+        </p>
+        <InquiryForm />
+      </div>
     </section>
   );
 }

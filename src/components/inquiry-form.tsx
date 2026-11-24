@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { primeRiceContact } from "@/lib/prime-rice-contact";
 import { riceTypes } from "@/lib/rice-types";
 
 type Status = "idle" | "submitting" | "sent" | "error";
@@ -39,7 +40,7 @@ export default function InquiryForm() {
       previousAttempt.current = null;
       setStatus("sent");
     } catch {
-      setError("Could not send the inquiry. Please try again or email info@amirriceexport.com.");
+      setError(`Could not send the inquiry. Please try again or email ${primeRiceContact.email}.`);
       setStatus("error");
     }
   }
@@ -70,19 +71,19 @@ export default function InquiryForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className={LABEL}>
-            Full name
+            Full Name
           </label>
           <input id="name" name="name" required maxLength={120} autoComplete="name" className={FIELD} placeholder="Your name" />
         </div>
         <div>
           <label htmlFor="company" className={LABEL}>
-            Company
+            Company Name
           </label>
           <input id="company" name="company" maxLength={160} autoComplete="organization" className={FIELD} placeholder="Company name" />
         </div>
         <div>
           <label htmlFor="email" className={LABEL}>
-            Email
+            Business Email
           </label>
           <input
             id="email"
@@ -96,14 +97,22 @@ export default function InquiryForm() {
           />
         </div>
         <div>
+          <label htmlFor="phone" className={LABEL}>Contact Number</label>
+          <input id="phone" name="phone" type="tel" maxLength={60} autoComplete="tel" className={FIELD} />
+        </div>
+        <div>
           <label htmlFor="country" className={LABEL}>
-            Destination country
+            Destination Country
           </label>
           <input id="country" name="country" maxLength={100} className={FIELD} placeholder="e.g. United Arab Emirates" />
         </div>
         <div>
+          <label htmlFor="port" className={LABEL}>Destination Port</label>
+          <input id="port" name="port" maxLength={120} className={FIELD} />
+        </div>
+        <div>
           <label htmlFor="rice" className={LABEL}>
-            Rice type
+            Preferred Rice Variety
           </label>
           <select id="rice" name="rice" defaultValue="" className={FIELD}>
             <option value="" disabled>
@@ -119,7 +128,7 @@ export default function InquiryForm() {
         </div>
         <div>
           <label htmlFor="quantity" className={LABEL}>
-            Quantity (MT)
+            Required Quantity (Metric Tons)
           </label>
           <input
             id="quantity"
@@ -130,9 +139,13 @@ export default function InquiryForm() {
             placeholder="e.g. 25"
           />
         </div>
+        <div>
+          <label htmlFor="packaging" className={LABEL}>Preferred Packaging</label>
+          <input id="packaging" name="packaging" maxLength={160} className={FIELD} placeholder="e.g. 20 kg woven PP bags" />
+        </div>
         <div className="sm:col-span-2">
           <label htmlFor="message" className={LABEL}>
-            Specification & requirements
+            Additional Specifications & Requirements
           </label>
           <textarea
             id="message"
@@ -140,7 +153,7 @@ export default function InquiryForm() {
             rows={4}
             maxLength={3000}
             className={FIELD}
-            placeholder="Broken percentage, packing format, destination port, target price…"
+            placeholder="Grading, broken percentage or other requirements…"
           />
         </div>
       </div>
@@ -156,7 +169,7 @@ export default function InquiryForm() {
         disabled={status === "submitting"}
         className="mt-6 w-full rounded-full bg-forest-900 px-6 py-3.5 text-sm font-semibold text-cream transition-colors hover:bg-forest-800 disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {status === "submitting" ? "Sending…" : "Send inquiry"}
+        {status === "submitting" ? "Sending…" : "Submit Inquiry"}
       </button>
 
     </form>

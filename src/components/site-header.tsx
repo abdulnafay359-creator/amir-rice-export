@@ -8,8 +8,8 @@ import { useState } from "react";
 
 const NAV = [
   { href: "/", label: "Home" },
-  { href: "/rice-types", label: "Rice Types" },
-  { href: "/packaging", label: "Packaging" },
+  { href: "/rice-types", label: "Rice Products" },
+  { href: "/packaging", label: "Packaging Solutions" },
   { href: "/global-reach", label: "Global Reach" },
   { href: "/contact", label: "Contact Us" },
 ] as const;
@@ -25,10 +25,10 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-forest-950/10 bg-cream/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-6 px-5 sm:px-6 lg:h-20 lg:px-10">
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/images/logo.png" alt="" width={48} height={48} className="h-12 w-12 object-contain" />
+          <Image src="/images/prime-rice.webp" alt="" width={48} height={48} className="h-12 w-12 object-contain" />
           <span className="flex flex-col leading-none">
             <span className="font-serif text-lg font-semibold tracking-tight text-forest-900 sm:text-xl">
-              Amir Rice Export
+              Prime Rice
             </span>
             <span className="mt-1 hidden text-[10px] font-medium uppercase tracking-[0.22em] text-forest-600 sm:block">
               Premium Rice · Pakistan

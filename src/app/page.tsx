@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import HarvestVideo from "@/components/harvest-video";
-import SectionHeading from "@/components/section-heading";
-import { riceTypes } from "@/lib/rice-types";
 
 export default function HomePage() {
   return (
@@ -19,181 +17,83 @@ export default function HomePage() {
               Pakistani rice exports
             </p>
             <h1 className="mt-5 max-w-xl font-serif text-4xl leading-[1.08] tracking-tight sm:text-6xl lg:text-7xl">
-              Premium rice from the fields of <span className="italic text-gold-300">Pakistan.</span>
+              Quality Rice. Reliable Supply. <span className="italic text-gold-300">Global Reach.</span>
             </h1>
             <p className="mt-5 max-w-md text-base leading-relaxed text-forest-100 sm:text-lg">
-              Basmati and non-Basmati rice for importers, distributors and retailers,
-              milled in Pakistan and shipped from Karachi.
+              We supply premium Basmati and Non Basmati rice to importers, wholesalers, distributors and retailers worldwide. From careful grain selection to customized packaging, we focus on delivering consistent quality with every shipment.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/rice-types" className="harvest-action rounded-full bg-gold-400 px-6 py-3 text-sm font-semibold text-forest-950 hover:bg-gold-300">
-                Explore rice types
+                Explore Our Products
               </Link>
               <Link href="/contact" className="harvest-action rounded-full border border-cream/65 bg-forest-950/20 px-6 py-3 text-sm font-semibold text-cream hover:bg-cream/15">
-                Request a quote
+                Request a Quote
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="harvest-reveal mx-auto grid max-w-7xl gap-8 px-5 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-10">
-        <Image src="/images/company.jpg" alt="Amir Rice Export company operations" width={900} height={600} className="h-72 w-full rounded-2xl object-cover sm:h-96" />
-        <SectionHeading eyebrow="Our expertise" title="Milled in Pakistan. Shipped from Karachi." description="Amir Rice Export & Import Co. operates four processing plants and supplies Pakistani rice to buyers across the Middle East, Europe, Asia and Africa." />
-      </section>
-
-      {/* Rice preview */}
-      <section className="border-y border-forest-950/10 bg-cream-dark/40">
-        <div className="mx-auto w-full max-w-7xl px-5 py-16 sm:px-6 lg:px-10 lg:py-24">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeading
-              eyebrow="The range"
-              title="Rice types we export."
-            />
-            <Link
-              href="/rice-types"
-              className="rounded-full border border-forest-950/20 px-5 py-2.5 text-sm font-semibold text-forest-900 transition-colors hover:bg-forest-950/5"
-            >
-              View all types
-            </Link>
+      <div className="mx-auto grid max-w-7xl gap-7 px-5 py-12 sm:px-6 lg:px-10">
+        <section className="rounded-2xl border border-forest-950/10 bg-white/60 p-6 sm:p-9">
+          <h2 className="font-serif text-3xl text-forest-950 sm:text-4xl">Your Reliable Partner in Global Rice Supply</h2>
+          <p className="mt-4 leading-relaxed text-forest-800">At Prime Rice, we understand that choosing the right rice supplier is about more than just finding a quality product. It is about consistency, reliability and building a business relationship you can depend on.</p>
+          <p className="mt-4 leading-relaxed text-forest-800">We offer a wide range of rice varieties to meet the requirements of different markets. Our focus on careful sourcing, processing and packaging helps us deliver products that meet our customers&apos; expectations.</p>
+          <p className="mt-4 leading-relaxed text-forest-800">Whether you require bulk shipments or customized retail packaging, we work closely with you to find the right solution for your business.</p>
+        </section>
+        <section className="rounded-2xl border border-forest-950/10 bg-white/60 p-6 sm:p-9">
+          <h2 className="font-serif text-3xl text-forest-950 sm:text-4xl">A Variety for Every Market</h2>
+          <p className="mt-4 leading-relaxed text-forest-800">From aromatic, extra long grain Basmati to everyday Non Basmati rice, our product range is designed to meet different consumer preferences, market demands and business requirements.</p>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+          <article className="grid gap-5 rounded-xl bg-forest-50 p-5 xl:grid-cols-[9rem_1fr] xl:items-center">
+            <Image src="/images/rice-catalog/1121-steam.webp" alt="" width={390} height={390} sizes="(min-width: 1280px) 144px, 320px" className="aspect-square w-full max-w-60 rounded-lg object-cover" />
+            <div>
+              <h3 className="font-serif text-2xl">Basmati Rice</h3>
+              <p className="mt-4 leading-relaxed text-forest-800">Known for its distinctive aroma, long grains and delicate texture, our Basmati rice is ideal for premium retail, foodservice and wholesale markets.</p>
+            </div>
+          </article>
+          <article className="grid gap-5 rounded-xl bg-forest-50 p-5 xl:grid-cols-[9rem_1fr] xl:items-center">
+            <Image src="/images/rice-catalog/irri-6.webp" alt="" width={390} height={390} sizes="(min-width: 1280px) 144px, 320px" className="aspect-square w-full max-w-60 rounded-lg object-cover" />
+            <div>
+              <h3 className="font-serif text-2xl">Non Basmati Rice</h3>
+              <p className="mt-4 leading-relaxed text-forest-800">A practical choice for everyday consumption, offering consistent grain quality and excellent value for large scale distribution.</p>
+            </div>
+          </article>
           </div>
-
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {riceTypes.slice(0, 3).map((rice) => (
-              <article
-                key={rice.slug}
-                className="harvest-reveal harvest-card group flex flex-col rounded-2xl border border-forest-950/10 bg-cream p-6 transition-shadow hover:shadow-lg hover:shadow-forest-950/5"
-              >
-                <Image
-                  src={rice.image}
-                  alt=""
-                  width={390}
-                  height={390}
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="harvest-photo mb-5 aspect-square w-full rounded-xl object-cover"
-                />
-                <p className="text-sm font-semibold text-gold-700">
-                  {rice.category}
-                </p>
-                <h3 className="mt-3 font-serif text-xl text-forest-900">
-                  {rice.name}
-                </h3>
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-forest-700/80">
-                  {rice.description}
-                </p>
-                <p className="mt-5 border-t border-forest-950/10 pt-4 text-xs font-medium text-forest-700">
-                  Average grain length:{" "}
-                  <span className="text-forest-900">{rice.grainLength}</span>
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Packaging teaser */}
-      <section className="harvest-reveal mx-auto grid w-full max-w-7xl gap-12 px-5 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-10 lg:py-24">
-        <div>
-          <SectionHeading
-            eyebrow="Packaging"
-            title="Retail bags, bulk sacks and private labels."
-            description="Retail-ready bags, bulk woven sacks and full private-label programmes — printed with your brand, your barcodes and your compliance marks."
-          />
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-            {[
-              "Retail bag sizes",
-              "PP and BOPP woven bags",
-              "Jute sacks",
-              "Private label printing",
-            ].map((item) => (
-              <li
-                key={item}
-                className="flex items-center gap-3 rounded-xl border border-forest-950/10 bg-white/60 px-4 py-3 text-sm font-medium text-forest-800"
-              >
-                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold-500" />
-                {item}
-              </li>
-            ))}
+          <Link className="mt-6 inline-flex rounded-full bg-forest-900 px-6 py-3 text-sm font-semibold text-cream hover:bg-forest-700" href="/rice-types">Explore Our Products</Link>
+        </section>
+        <section className="rounded-2xl border border-forest-950/10 bg-white/60 p-6 sm:p-9">
+          <h2 className="font-serif text-3xl text-forest-950 sm:text-4xl">Built Around Your Business Needs</h2>
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-forest-800">
+            <li>Consistent Quality: Careful grain selection and quality checks throughout the processing journey.</li>
+            <li>Reliable Supply: Supply solutions designed to support long term business requirements.</li>
+            <li>Flexible Packaging: Retail, wholesale and customized private label packaging options.</li>
+            <li>Global Distribution: Export solutions tailored to international market requirements.</li>
+            <li>Competitive Pricing: Quality products at commercially competitive prices.</li>
+            <li>Customer Support: Clear communication and dedicated assistance throughout the order process.</li>
           </ul>
-          <Link
-            href="/packaging"
-            className="mt-8 inline-flex rounded-full bg-forest-900 px-6 py-3 text-sm font-semibold text-cream transition-colors hover:bg-forest-800"
-          >
-            See packaging options
-          </Link>
-        </div>
-
-        <Image src="/images/retail-pack.jpg" alt="Branded rice bags from Amir Rice Export" width={900} height={600} className="h-80 w-full rounded-[2rem] bg-white object-contain" />
-      </section>
-
-      {/* Global reach band */}
-      <section className="relative overflow-hidden bg-forest-950">
-        <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-5 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-10 lg:py-24">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-gold-300">
-              Global reach
-            </p>
-            <h2 className="mt-3 font-serif text-3xl leading-tight tracking-tight text-cream sm:text-4xl">
-              Shipping Pakistani rice from Karachi.
-            </h2>
-            <p className="mt-4 text-forest-200">We supply buyers across the Middle East, Africa, Europe and Asia.</p>
-            <Link
-              href="/global-reach"
-              className="mt-8 inline-flex rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-forest-950 transition-colors hover:bg-gold-400"
-            >
-              Where we ship
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              "Middle East",
-              "Africa",
-              "Europe",
-              "Asia",
-            ].map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl border border-cream/10 bg-forest-900/50 p-5"
-              >
-                <p className="text-sm font-semibold text-cream">{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-6 lg:px-10">
-        <SectionHeading eyebrow="Processing" title="From milling to optical sorting." description="The company uses modern processing equipment and inspects rice during production to keep grades consistent." />
-        <div className="harvest-reveal mt-8 grid gap-5 sm:grid-cols-2">
-          <Image src="/images/processing.jpg" alt="Rice processing facility" width={900} height={600} className="h-64 w-full rounded-2xl object-cover" />
-          <Image src="/images/sorting.jpg" alt="Optical rice sorting equipment" width={900} height={600} className="h-64 w-full rounded-2xl object-cover" />
-        </div>
-        <a href="https://player.vimeo.com/video/821665436?h=84c869f129" className="mt-6 inline-block font-semibold text-forest-800 underline">Watch the company video</a>
-      </section>
-
-      {/* CTA */}
-      <section className="mx-auto w-full max-w-7xl px-5 py-16 sm:px-6 lg:px-10 lg:py-24">
-        <div className="rounded-[2rem] border border-forest-950/10 bg-cream-dark/60 px-6 py-12 text-center sm:px-12 lg:py-16">
-          <h2 className="mx-auto max-w-2xl font-serif text-3xl leading-tight tracking-tight text-forest-900 sm:text-4xl">
-            Tell us your grade, quantity and destination port.
-          </h2>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link
-              href="/contact"
-              className="rounded-full bg-forest-900 px-6 py-3 text-sm font-semibold text-cream transition-colors hover:bg-forest-800"
-            >
-              Request a quote
-            </Link>
-            <Link
-              href="/rice-types"
-              className="rounded-full border border-forest-950/20 px-6 py-3 text-sm font-semibold text-forest-900 transition-colors hover:bg-forest-950/5"
-            >
-              Browse the range
-            </Link>
-          </div>
-        </div>
-      </section>
+        </section>
+        <section className="rounded-2xl border border-forest-950/10 bg-white/60 p-6 sm:p-9">
+          <h2 className="font-serif text-3xl text-forest-950 sm:text-4xl">Care in Every Grain</h2>
+          <p className="mt-4 leading-relaxed text-forest-800">Quality begins with selecting the right rice. Through cleaning, milling, sorting, grading and packaging, we focus on maintaining the natural characteristics of each rice variety.</p>
+          <p className="mt-4 leading-relaxed text-forest-800">Our approach helps ensure consistent grain size, appearance and cooking performance.</p>
+        </section>
+        <section className="rounded-2xl border border-forest-950/10 bg-white/60 p-6 sm:p-9">
+          <h2 className="font-serif text-3xl text-forest-950 sm:text-4xl">Your Product. Your Brand. Your Packaging.</h2>
+          <p className="mt-4 leading-relaxed text-forest-800">We offer flexible packaging solutions for retail businesses, wholesalers and international distributors. Whether you need bulk rice shipments or products packed under your own brand, we can help you select packaging that suits your market.</p>
+          <Link className="mt-6 inline-flex rounded-full bg-forest-900 px-6 py-3 text-sm font-semibold text-cream hover:bg-forest-700" href="/packaging">Explore Packaging Options</Link>
+        </section>
+        <section className="rounded-2xl border border-forest-950/10 bg-white/60 p-6 sm:p-9">
+          <h2 className="font-serif text-3xl text-forest-950 sm:text-4xl">Connecting Quality Rice with Global Markets</h2>
+          <p className="mt-4 leading-relaxed text-forest-800">We work with businesses across international markets, offering rice supply solutions that meet different regional preferences and commercial requirements.</p>
+          <p className="mt-4 leading-relaxed text-forest-800">Our goal is to build lasting relationships through dependable service, consistent quality and transparent communication.</p>
+        </section>
+        <section className="rounded-2xl border border-forest-950/10 bg-white/60 p-6 sm:p-9">
+          <h2 className="font-serif text-3xl text-forest-950 sm:text-4xl">Looking for a Reliable Rice Supplier?</h2>
+          <p className="mt-4 leading-relaxed text-forest-800">Tell us about your product requirements, preferred packaging and order quantity. Our team will help you find the right rice supply solution for your business.</p>
+          <Link className="mt-6 inline-flex rounded-full bg-forest-900 px-6 py-3 text-sm font-semibold text-cream hover:bg-forest-700" href="/contact">Get a Quote</Link>
+        </section>
+      </div>
     </>
   );
 }

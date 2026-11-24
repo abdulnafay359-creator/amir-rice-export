@@ -18,19 +18,18 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://amirriceexport.com"),
   title: {
-    default: "Amir Rice Export — Premium Basmati & Non-Basmati Rice from Pakistan",
-    template: "%s · Amir Rice Export",
+    default: "Prime Rice — Premium Basmati & Non-Basmati Rice from Pakistan",
+    template: "%s · Prime Rice",
   },
   description:
-    "Pakistan-based exporter of premium Basmati and non-Basmati rice. Sortex-cleaned, moisture-controlled and shipped worldwide from Karachi.",
+    "Prime Rice supplies premium Basmati and Non Basmati rice worldwide with flexible packaging and export services.",
   openGraph: {
     type: "website",
-    siteName: "Amir Rice Export",
-    title: "Amir Rice Export — Premium Rice from Pakistan",
+    siteName: "Prime Rice",
+    title: "Prime Rice — Premium Rice from Pakistan",
     description:
-      "Premium Basmati and non-Basmati rice, sortex-cleaned and exported worldwide from Karachi, Pakistan.",
+      "Premium Basmati and Non Basmati rice, flexible packaging, and international supply.",
   },
 };
 
