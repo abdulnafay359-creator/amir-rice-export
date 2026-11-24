@@ -2,6 +2,7 @@ import Image from "next/image";
 
 type PageHeroProps = {
   title: string;
+  eyebrow?: string;
   description?: string;
   image: string;
   imageAlt: string;
@@ -10,6 +11,7 @@ type PageHeroProps = {
 
 export default function PageHero({
   title,
+  eyebrow,
   description,
   image,
   imageAlt,
@@ -19,6 +21,7 @@ export default function PageHero({
     <section className="overflow-hidden bg-forest-950 text-cream">
       <div className="mx-auto grid max-w-7xl items-center gap-7 px-5 py-9 sm:px-6 md:grid-cols-2 md:gap-10 md:py-14 lg:px-10">
         <div className="harvest-hero-copy border-l-2 border-gold-400 pl-5 sm:pl-7">
+          {eyebrow && <p className="mb-3 text-sm font-semibold tracking-wide text-gold-300">{eyebrow}</p>}
           <h1 className="font-serif text-4xl leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
             {title}
           </h1>

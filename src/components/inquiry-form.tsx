@@ -11,7 +11,7 @@ const FIELD =
 const LABEL =
   "text-[11px] font-semibold uppercase tracking-[0.14em] text-forest-700";
 
-export default function InquiryForm() {
+export default function InquiryForm({ selectedRice = "" }: { selectedRice?: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
   const previousAttempt = useRef<{ id: string; data: string } | null>(null);
@@ -114,7 +114,7 @@ export default function InquiryForm() {
           <label htmlFor="rice" className={LABEL}>
             Preferred Rice Variety
           </label>
-          <select id="rice" name="rice" defaultValue="" className={FIELD}>
+          <select id="rice" name="rice" defaultValue={selectedRice} className={FIELD}>
             <option value="" disabled>
               Select a variety
             </option>

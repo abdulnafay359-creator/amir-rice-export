@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import DeliveryMarkets from "@/components/delivery-markets";
 import HarvestVideo from "@/components/harvest-video";
 
 export default function HomePage() {
@@ -73,20 +74,38 @@ export default function HomePage() {
             <li>Customer Support: Clear communication and dedicated assistance throughout the order process.</li>
           </ul>
         </section>
-        <section className="rounded-2xl border border-forest-950/10 bg-white/60 p-6 sm:p-9">
-          <h2 className="font-serif text-3xl text-forest-950 sm:text-4xl">Care in Every Grain</h2>
-          <p className="mt-4 leading-relaxed text-forest-800">Quality begins with selecting the right rice. Through cleaning, milling, sorting, grading and packaging, we focus on maintaining the natural characteristics of each rice variety.</p>
-          <p className="mt-4 leading-relaxed text-forest-800">Our approach helps ensure consistent grain size, appearance and cooking performance.</p>
+        <section className="grid overflow-hidden rounded-2xl bg-forest-950 text-cream lg:grid-cols-2">
+          <div className="relative min-h-64 lg:min-h-full">
+            <Image src="/images/rice-hero.jpg" alt="Close-up of uncooked rice grains" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+          </div>
+          <div className="p-6 sm:p-9 lg:p-12">
+            <h2 className="font-serif text-3xl text-gold-300 sm:text-4xl">Care in Every Grain</h2>
+            <p className="mt-4 leading-relaxed text-forest-100">Quality begins with selecting the right rice. We focus on maintaining the natural characteristics of each variety at every stage.</p>
+            <ol className="mt-6 flex flex-wrap gap-2" aria-label="Rice processing stages">
+              {["Selection", "Cleaning", "Milling", "Sorting", "Grading", "Packaging"].map((stage) => (
+                <li key={stage} className="rounded-full border border-gold-300/30 bg-forest-900 px-3 py-1.5 text-sm text-gold-100">{stage}</li>
+              ))}
+            </ol>
+            <p className="mt-6 border-t border-cream/20 pt-5 leading-relaxed text-forest-100">Our approach helps ensure consistent grain size, appearance and cooking performance.</p>
+          </div>
         </section>
         <section className="rounded-2xl border border-forest-950/10 bg-white/60 p-6 sm:p-9">
           <h2 className="font-serif text-3xl text-forest-950 sm:text-4xl">Your Product. Your Brand. Your Packaging.</h2>
           <p className="mt-4 leading-relaxed text-forest-800">We offer flexible packaging solutions for retail businesses, wholesalers and international distributors. Whether you need bulk rice shipments or products packed under your own brand, we can help you select packaging that suits your market.</p>
           <Link className="mt-6 inline-flex rounded-full bg-forest-900 px-6 py-3 text-sm font-semibold text-cream hover:bg-forest-700" href="/packaging">Explore Packaging Options</Link>
         </section>
-        <section className="rounded-2xl border border-forest-950/10 bg-white/60 p-6 sm:p-9">
-          <h2 className="font-serif text-3xl text-forest-950 sm:text-4xl">Connecting Quality Rice with Global Markets</h2>
-          <p className="mt-4 leading-relaxed text-forest-800">We work with businesses across international markets, offering rice supply solutions that meet different regional preferences and commercial requirements.</p>
-          <p className="mt-4 leading-relaxed text-forest-800">Our goal is to build lasting relationships through dependable service, consistent quality and transparent communication.</p>
+        <section id="where-we-deliver" className="scroll-mt-24 overflow-hidden rounded-2xl border border-forest-950/10 bg-white/60">
+          <div className="relative isolate overflow-hidden bg-forest-950 px-6 py-12 text-cream sm:px-9">
+            <Image src="/images/export-port.webp" alt="" fill sizes="(min-width: 1280px) 1200px, 100vw" className="-z-20 object-cover" />
+            <div aria-hidden="true" className="absolute inset-0 -z-10 bg-forest-950/75" />
+            <h2 className="font-serif text-3xl sm:text-4xl">Connecting Quality Rice with Global Markets</h2>
+            <p className="mt-4 max-w-2xl leading-relaxed text-forest-100">We work with businesses across international markets, offering rice supply solutions that meet different regional preferences and commercial requirements.</p>
+            <p className="mt-4 max-w-2xl leading-relaxed text-forest-100">Our goal is to build lasting relationships through dependable service, consistent quality and transparent communication.</p>
+          </div>
+          <div className="px-6 pb-8 sm:px-9">
+            <DeliveryMarkets />
+            <Link href="/global-reach" className="mt-5 inline-flex font-semibold text-forest-800 underline underline-offset-4">Explore Global Reach</Link>
+          </div>
         </section>
         <section className="rounded-2xl border border-forest-950/10 bg-white/60 p-6 sm:p-9">
           <h2 className="font-serif text-3xl text-forest-950 sm:text-4xl">Looking for a Reliable Rice Supplier?</h2>
