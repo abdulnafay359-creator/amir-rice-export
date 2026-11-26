@@ -13,11 +13,7 @@ export default function HomePage() {
 
         <div className="harvest-hero-copy relative mx-auto w-full max-w-7xl px-5 pb-12 pt-9 sm:px-6 lg:px-10 lg:pb-24 lg:pt-20">
           <div className="max-w-xl">
-            <p className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-gold-300">
-              <span aria-hidden="true" className="h-px w-8 bg-gold-400" />
-              Pakistani rice exports
-            </p>
-            <h1 className="mt-5 max-w-xl font-serif text-4xl leading-[1.08] tracking-tight sm:text-6xl lg:text-7xl">
+            <h1 className="max-w-xl font-serif text-4xl leading-[1.08] tracking-tight sm:text-6xl lg:text-7xl">
               Quality Rice. Reliable Supply. <span className="italic text-gold-300">Global Reach.</span>
             </h1>
             <p className="mt-5 max-w-md text-base leading-relaxed text-forest-100 sm:text-lg">
@@ -54,7 +50,7 @@ export default function HomePage() {
             </div>
           </article>
           <article className="grid gap-5 rounded-xl bg-forest-50 p-5 xl:grid-cols-[9rem_1fr] xl:items-center">
-            <Image src="/images/rice-catalog/irri-6.webp" alt="" width={390} height={390} sizes="(min-width: 1280px) 144px, 320px" className="aspect-square w-full max-w-60 rounded-lg object-cover" />
+            <Image src="/images/rice-catalog/irri-9.webp" alt="" width={390} height={390} sizes="(min-width: 1280px) 144px, 320px" className="aspect-square w-full max-w-60 rounded-lg object-cover" />
             <div>
               <h3 className="font-serif text-2xl">Non Basmati Rice</h3>
               <p className="mt-4 leading-relaxed text-forest-800">A practical choice for everyday consumption, offering consistent grain quality and excellent value for large scale distribution.</p>

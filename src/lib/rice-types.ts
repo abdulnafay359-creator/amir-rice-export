@@ -9,6 +9,22 @@ export type RiceType = {
 
 export const riceTypes: RiceType[] = [
   {
+    slug: "special-1121-kainat-sella",
+    name: "Special 1121 Kainat Sella Rice",
+    category: "Parboiled",
+    image: "/images/rice-catalog/1121-sella.webp",
+    grainLength: null,
+    description: "Parboiled 1121 Kainat Basmati rice with long grains and a firm texture.",
+  },
+  {
+    slug: "special-1121-kainat-basmati",
+    name: "Special 1121 Kainat Basmati Rice",
+    category: "Basmati",
+    image: "/images/rice-catalog/1121-steam.webp",
+    grainLength: null,
+    description: "Long-grain 1121 Kainat Basmati rice with a distinctive aroma.",
+  },
+  {
     slug: "1121-steam-basmati",
     name: "1121 Steam Basmati Rice",
     category: "Basmati",
@@ -49,14 +65,6 @@ export const riceTypes: RiceType[] = [
     description: "A versatile long grain rice with a slender appearance and pleasant texture. Available in white and parboiled forms, it is suitable for everyday consumption and wholesale distribution.",
   },
   {
-    slug: "irri-6-white",
-    name: "IRRI-6 Rice",
-    category: "Non-Basmati",
-    image: "/images/rice-catalog/irri-6.webp",
-    grainLength: "6.4 mm",
-    description: "An economical long grain rice with a soft texture and consistent cooking performance. A practical option for bulk distribution and everyday meals.",
-  },
-  {
     slug: "irri-9",
     name: "IRRI-9 (C9) Rice",
     category: "Non-Basmati",
@@ -79,13 +87,5 @@ export const riceTypes: RiceType[] = [
     image: "/images/rice-catalog/brown.webp",
     grainLength: "7.4–7.6 mm",
     description: "An aromatic whole grain rice that retains its natural bran layer, offering a nutty flavour and slightly chewy texture. A great addition to whole grain and health conscious product ranges.",
-  },
-  {
-    slug: "d98-basmati",
-    name: "D98 Basmati Rice",
-    category: "Basmati",
-    image: "/images/rice-catalog/d98.webp",
-    grainLength: null,
-    description: "An aromatic long grain Basmati variety with a distinctive fragrance and pleasant cooking texture. Suitable for both retail and wholesale markets.",
   },
 ];

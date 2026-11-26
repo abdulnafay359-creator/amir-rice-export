@@ -1,4 +1,4 @@
-# Amir Rice Export
+# Prime Rice
 
 Next.js App Router project with TypeScript, Tailwind CSS, and ESLint. Application code lives in `src/app`, and imports under `src` can use the `@/` alias.
 

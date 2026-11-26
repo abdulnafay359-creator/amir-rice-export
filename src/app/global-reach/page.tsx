@@ -25,7 +25,7 @@ export default function GlobalReachPage() {
         title="Quality Rice Without Borders"
         description="At Prime Rice, we help businesses access quality rice through dependable international supply solutions. We work with importers, wholesalers, distributors and retailers across different regions, understanding that every market has its own requirements."
         image="/images/export-port.webp"
-        imageAlt="Illustration of a container port and cargo ship"
+        imageAlt="Cargo ship and cranes at a container port"
       />
       <div className="mx-auto grid max-w-7xl gap-7 px-5 py-12 sm:px-6 lg:px-10">
         <section className="rounded-2xl border border-forest-950/10 bg-white/60 p-6 sm:p-9">
