@@ -50,7 +50,7 @@ export default function HomePage() {
             </div>
           </article>
           <article className="grid gap-5 rounded-xl bg-forest-50 p-5 xl:grid-cols-[9rem_1fr] xl:items-center">
-            <Image src="/images/rice-catalog/irri-9.webp" alt="" width={390} height={390} sizes="(min-width: 1280px) 144px, 320px" className="aspect-square w-full max-w-60 rounded-lg object-cover" />
+            <Image src="/images/rice-catalog/pk-386.webp" alt="" width={390} height={390} sizes="(min-width: 1280px) 144px, 320px" className="aspect-square w-full max-w-60 rounded-lg object-cover" />
             <div>
               <h3 className="font-serif text-2xl">Non Basmati Rice</h3>
               <p className="mt-4 leading-relaxed text-forest-800">A practical choice for everyday consumption, offering consistent grain quality and excellent value for large scale distribution.</p>

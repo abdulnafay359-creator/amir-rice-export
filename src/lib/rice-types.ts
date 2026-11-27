@@ -68,14 +68,6 @@ export const riceTypes: RiceType[] = [
     description: "A versatile long grain rice with a slender appearance and pleasant texture. Available in white and parboiled forms, it is suitable for everyday consumption and wholesale distribution.",
   },
   {
-    slug: "irri-9",
-    name: "IRRI-9 (C9) Rice",
-    category: "Non-Basmati",
-    image: "/images/rice-catalog/irri-9.webp",
-    grainLength: "6.8 mm",
-    description: "A long grain Non Basmati variety offering a balance of quality, texture and value. Suitable for wholesale buyers, foodservice businesses and large scale distribution.",
-  },
-  {
     slug: "broken-rice",
     name: "IRRI-6 Broken Rice",
     category: "Non-Basmati",
