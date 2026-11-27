@@ -44,24 +44,30 @@ export default function RiceCatalog() {
               />
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-600">
-                    {rice.category}
-                  </p>
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-600">
+                      {rice.category}
+                    </p>
+                    {rice.featured && (
+                      <span className="rounded-full bg-gold-100 px-2.5 py-0.5 text-xs font-semibold text-forest-950">
+                        Featured
+                      </span>
+                    )}
+                  </div>
                   <h2 className="mt-2 font-serif text-2xl text-forest-900">
                     {rice.name}
                   </h2>
                 </div>
               </div>
 
-              <p className="mt-5 text-sm leading-relaxed text-forest-700/80">
+              <p className="mt-5 flex-1 text-sm leading-relaxed text-forest-700/80">
                 {rice.description}
               </p>
 
-              {rice.grainLength && (
-                <p className="mt-5 border-t border-forest-950/10 pt-4 text-sm text-forest-700">
-                  Average grain length <strong>{rice.grainLength}</strong>
-                </p>
-              )}
+              <dl className="mt-5 flex flex-wrap items-baseline gap-x-2 border-t border-forest-950/10 pt-4 text-sm text-forest-700">
+                <dt>Average grain length</dt>
+                <dd className="font-semibold">{rice.grainLength ?? "Available on request"}</dd>
+              </dl>
 
               <Link href={{ pathname: "/contact", query: { rice: rice.slug } }} className="mt-5 self-start text-sm font-semibold text-forest-800 underline">Request a quote</Link>
             </article>

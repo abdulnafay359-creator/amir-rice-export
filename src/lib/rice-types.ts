@@ -5,24 +5,27 @@ export type RiceType = {
   image: string;
   grainLength: string | null;
   description: string;
+  featured?: boolean;
 };
 
 export const riceTypes: RiceType[] = [
   {
     slug: "special-1121-kainat-sella",
+    featured: true,
     name: "Special 1121 Kainat Sella Rice",
     category: "Parboiled",
     image: "/images/rice-catalog/1121-sella.webp",
     grainLength: null,
-    description: "Parboiled 1121 Kainat Basmati rice with long grains and a firm texture.",
+    description: "An extra-long-grain parboiled Basmati with a firm texture. The grains hold their shape and stay separate during cooking, making it suitable for biryani, catering, and large-batch foodservice.",
   },
   {
     slug: "special-1121-kainat-basmati",
+    featured: true,
     name: "Special 1121 Kainat Basmati Rice",
     category: "Basmati",
     image: "/images/rice-catalog/1121-steam.webp",
     grainLength: null,
-    description: "Long-grain 1121 Kainat Basmati rice with a distinctive aroma.",
+    description: "An aromatic extra-long-grain Basmati with a delicate texture and grains that elongate during cooking. Suitable for pilaf, biryani, and premium retail or foodservice ranges.",
   },
   {
     slug: "1121-steam-basmati",
